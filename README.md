@@ -1,1 +1,1 @@
-# Blodowica-LiveStreamingPlatform-Backend
+# Blodowica-LiveStreamingPlatform-FrontEnd
