@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+
+// import LoginComponent from './Components/FormComponent/LoginComponent/LoginComponet';
+// import RegistrationComponent from './Components/FormComponent/RegistrationComponent/Registration.Component';
+// import { Container, Col, Row, } from 'react-bootstrap';
 
 ReactDOM.render(
-  <React.StrictMode>
-
-  </React.StrictMode>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
