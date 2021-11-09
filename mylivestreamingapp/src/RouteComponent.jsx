@@ -11,6 +11,7 @@ const RouteComponent = () => {
      <Route path='/videoPlayer' element={<VideoPLayerComponent />} />
      <Route path='/Form' element={<FormComponent />} />
      <Route path='/user-profile' element={<UserProfileComponent />} />
+     <Route path='/' element={<FormComponent />} />
     </Routes>
 
 </div>
