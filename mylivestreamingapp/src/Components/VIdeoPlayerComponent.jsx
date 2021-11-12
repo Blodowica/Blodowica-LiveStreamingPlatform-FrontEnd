@@ -10,7 +10,7 @@ export function VideoPLayerComponent()
         <NavBar />
       <h1>LiveStream Video PLayer </h1>
 
-      <ReactHls url='http://192.168.2.134:8080/hls/test.m3u8' />
+      <ReactHls url='http://localhost:8080/hls/test.m3u8' />
       </div>
   );
 }
