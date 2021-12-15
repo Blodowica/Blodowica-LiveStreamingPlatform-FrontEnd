@@ -52,9 +52,9 @@ export default class UserStore {
         }
     }
 
-    registerUser = async (email, password) => {
+    registerUser = async (firstName, lastName, userName, email, password) => {
         try {
-            var creds = { email, password };
+            var creds = { firstName, lastName, userName, email, password, };
             const user = await agent.Account.register(creds);
             store.commonStore.setToken(user.token);
             runInAction(() => this.user = user)
