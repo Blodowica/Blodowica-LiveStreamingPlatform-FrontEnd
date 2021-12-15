@@ -1,18 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'semantic-ui-css/semantic.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { store, StoreContext } from './Stores/store';
+import { createBrowserHistory } from 'history';
+import { Router } from 'react-router-dom';
 
-// import LoginComponent from './Components/FormComponent/LoginComponent/LoginComponet';
-// import RegistrationComponent from './Components/FormComponent/RegistrationComponent/Registration.Component';
-// import { Container, Col, Row, } from 'react-bootstrap';
 
+
+export const history = createBrowserHistory();
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <StoreContext.Provider value={store}>
+    <Router history={history}>
+      <App />
+    </Router>
+  </StoreContext.Provider>,
   document.getElementById('root')
 );
 

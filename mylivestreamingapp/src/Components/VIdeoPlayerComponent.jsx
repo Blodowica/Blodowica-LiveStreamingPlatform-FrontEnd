@@ -6,11 +6,11 @@ import NavBar from './common/NavBar';
 export function VideoPLayerComponent()
 {
   return(
-      <div>
+      <div className="Full">
         <NavBar />
       <h1>LiveStream Video PLayer </h1>
 
-      <ReactHls url='http://localhost:8080/hls/test.m3u8' />
+      <ReactHls url='http://localhost:8080/hls/test2.m3u8' />
       </div>
   );
 }

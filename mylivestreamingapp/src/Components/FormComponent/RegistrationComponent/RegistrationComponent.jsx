@@ -5,10 +5,11 @@ import { MdEmail, MdLock , MdPerson} from "react-icons/md";
 
 import {Form, Card, Button, InputGroup, Col, Row,   } from 'react-bootstrap'
 import {GiGamepad} from "react-icons/gi";
-import { useNavigate } from 'react-router';
+import { history } from '../../..';
+
 
 export function RegistrationComponents({switchToLogin}) {
- const navigate = useNavigate();
+
         return (
 <Card className="m-0 m-lg-5 p-0 p-sm-3 p-lg-4 pb-lg-0 pb-md-0 pb-sm-0" style={{ borderRadius: 10, backgroundColor: "#EDEFFC" }}>
         <Card.Body>
@@ -75,7 +76,7 @@ export function RegistrationComponents({switchToLogin}) {
             <Row>
               <Col className="text-center">
 
-                <Button className="rounded" style={{ paddingLeft: "30px", paddingRight: "30px", backgroundColor: "#6933C8", color: "white" }} variant="register" size="lg" onClick={() => navigate('../user-profile')}>
+                <Button className="rounded" style={{ paddingLeft: "30px", paddingRight: "30px", backgroundColor: "#6933C8", color: "white" }} variant="register" size="lg" onClick={() =>history.push('/user-profile')}>
                   Register
                 </Button>
               </Col>
