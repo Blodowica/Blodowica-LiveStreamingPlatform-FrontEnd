@@ -1,9 +1,9 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-
+import './NavBar.css';
 const NavBar = () => {
     return ( 
-      <div>
+      
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
      <NavLink className="nav-item nav-link active" to='../form'>forms</NavLink>
@@ -11,7 +11,7 @@ const NavBar = () => {
      <NavLink to="../videoplayer">Video Player</NavLink>
   
    </nav>
-      </div>
+     
      );
 }
  

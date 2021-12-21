@@ -1,0 +1,29 @@
+.background
+{
+    background-image: url('../../Assets/ProfilePageBackground.svg');
+}
+.sidetab
+{
+    width: 25%;
+     
+     border-radius: 3%;
+
+    
+}
+
+.FormInput
+{
+
+    border-radius: 3%;
+}
+.profileImage 
+{
+    width: 170px;
+    height: 170px;
+
+    border-radius: 100%;
+ 
+    padding: 5px;
+   
+   
+}

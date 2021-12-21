@@ -1,8 +1,8 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom'
 import FormComponent from './Components/FormComponent/ForrmComponent';
-import UserProfileComponent from './Components/UserProfileComponent';
-import { VideoPLayerComponent } from './Components/VIdeoPlayerComponent';
+import UserProfileComponent from './Components/ProfilePage/UserProfileComponent';
+import { VideoPLayerComponent } from './Components/VideoPlayer/VIdeoPlayerComponent';
 
 const RouteComponent = () => {
     return (

@@ -10,7 +10,7 @@ const sleep = (delay) => {
 }
 
 
-axios.defaults.baseURL = 'https://localhost:5001/api'
+axios.defaults.baseURL = `${process.env.REACT_APP_BACKEND_API_URL}/api`
 
 
 //when there is already a token send a request to get the associated users information

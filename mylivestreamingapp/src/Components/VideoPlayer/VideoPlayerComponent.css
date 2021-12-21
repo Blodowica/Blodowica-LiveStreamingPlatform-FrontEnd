@@ -1,3 +1,7 @@
+.videobackground
+{
+    background-color: gray;
+}
 .fill-window {
     height: 100%;
     position: absolute;
