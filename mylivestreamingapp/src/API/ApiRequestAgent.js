@@ -55,7 +55,7 @@ const Account = {
     current: () => request.get('/api/Account'),
     login: (user) => request.post('/api/Account/login', user),
     register: (user) => request.post('/api/Account/register', user),
-    Update: (user) => request.put(`https://localhost:5001/api/Users/update/${user.id}`, user)
+    Update: (user) => request.put(`/api/Users/update/${user.id}`, user)
 }
 
 const agent = {

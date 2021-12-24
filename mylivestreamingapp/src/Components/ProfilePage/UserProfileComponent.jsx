@@ -9,13 +9,10 @@ import { useState } from 'react';
 import EditProfileComponent from './ProfileForms/EditProfileComponent';
 
 
-
-
 export default observer(function UserProfileComponent( ) {
     const {userStore: { logout, user}} = useStore();
     const [isEditUserProfile, setIsUserProfile] = useState(false);
     
- 
    return ( 
      <>
  <div className='fill-window background'>
