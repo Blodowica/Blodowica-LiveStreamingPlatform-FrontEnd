@@ -64,4 +64,14 @@ export default class UserStore {
             throw error;
         }
     }
+
+    updateUser = async (creds) => {
+        try {
+            const user = await agent.Account.Update(creds);
+            runInAction(() => this.user = user);
+        } catch (error) {
+
+        }
+
+    }
 }

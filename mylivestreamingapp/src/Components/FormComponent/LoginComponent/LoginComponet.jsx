@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { MdEmail, MdLock } from "react-icons/md";
 import { Card, Button, InputGroup, Col, Row, Form,    } from 'react-bootstrap'
 import 'bootstrap-css-only/css/bootstrap.min.css';
-import { Formik } from 'formik';
 import { useStore } from '../../../Stores/store';
 import { observer } from 'mobx-react-lite';
 

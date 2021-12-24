@@ -1,33 +1,29 @@
 import React from 'react';
-import agent from '../../API/ApiRequestAgent';
 import NavBar from '../common/NavBar';
 import '../FullWindowComponent.css'
 import { useStore } from '../../Stores/store';
 import { observer } from 'mobx-react-lite';
 import  './UserProfileComponent.css';
-import { Button, Card, Col, Container, Nav, Row, Tab } from 'react-bootstrap';
-import EditUserProfileComponent from '../Input/EditUserProfileInfoComponent';
-import UserInforComponents from '../UserInformatiionComponent/UserInforComponent';
-import { Formik } from 'formik';
+import { Button, Card, Col, Container} from 'react-bootstrap';
 import { useState } from 'react';
+import EditProfileComponent from './ProfileForms/EditProfileComponent';
+
+
+
 
 export default observer(function UserProfileComponent( ) {
- const {userStore: { logout, user}} = useStore();
- const [isEditUserProfile, setIsUserProfile] = useState(false);
-
-
-    return ( 
+    const {userStore: { logout, user}} = useStore();
+    const [isEditUserProfile, setIsUserProfile] = useState(false);
+    
+ 
+   return ( 
      <>
-    <div className='fill-window background'>
+ <div className='fill-window background'>
         <NavBar />
 
-
-   <Container fluid>  
-    
-
-      
-        
-   <div className='grid'>
+<Container fluid>  
+         
+   <div className='grid '>
 
    <div className='row'>
 
@@ -35,14 +31,12 @@ export default observer(function UserProfileComponent( ) {
     <Card className='mt-5 sidetab ' style={{ width: '35vh' }}>
 
 <Col className='d-flex justify-content-center mb-5'>
-    <img className='profileImage' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSya5dwz7sppH6NGJVip5KpNHbO6feSmMVJoQ&usqp=CAU' alt="profile image" />
+    <img className='profilePic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSya5dwz7sppH6NGJVip5KpNHbO6feSmMVJoQ&usqp=CAU' alt="profile picture" />
 </Col>
-
-
 
 <Col className='mb-5 ' >
     <h3 style={{ textAlign: 'center' }}>Username : {user.userName}</h3>
-    <h3 style={{ textAlign: 'center' }}>Name : {user.firstName} {user.lastName}  </h3>
+    <h3 style={{ textAlign: 'center' }}>Name : {user.firstName}  {user.lastName}</h3>
     <h3 style={{ textAlign: 'center' }}>Email</h3>
     <h3 style={{ textAlign: 'center' }}>Bio</h3>
     <h3>{user.image}</h3>
@@ -59,30 +53,19 @@ export default observer(function UserProfileComponent( ) {
     <button className="mt-3 mb-3" style={{ marginLeft: '30%', marginRight: '30%', marginBottom: '5%' }} onClick={() => logout()}>Log Out</button>
 </Card>
 </Card>
-
-
-    </div>
+ </div>
      <div className="col-md-8 s-12 ">  
       <Card className='mt-5 FormInput'>
          
-         {isEditUserProfile? <h1>Edit profile page</h1> : <h1>No page</h1>}
+         {isEditUserProfile? <EditProfileComponent /> : <h1>No page</h1>}
      
       </Card>
      </div>
-   
-
-
-     </div>
-
-     
-
-     
-
+     </div>  
    </div>
         </Container>
         </div>
         
-
         </>
      );
 })

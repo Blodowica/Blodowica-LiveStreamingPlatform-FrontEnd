@@ -5,7 +5,6 @@ import { MdEmail, MdLock , MdPerson} from "react-icons/md";
 
 import {Form, Card, Button, InputGroup, Col, Row,   } from 'react-bootstrap'
 import {GiGamepad} from "react-icons/gi";
-import { history } from '../../..';
 import { useState } from 'react';
 import { useStore } from '../../../Stores/store';
 
@@ -36,7 +35,7 @@ export function RegistrationComponents({switchToLogin}) {
       return re.test(String(email).toLowerCase());
     }
     function arePasswordsSame() {
-      if (password && repeatPassword && password == repeatPassword) {
+      if (password && repeatPassword && password === repeatPassword) {
         return true
       }
       return false
