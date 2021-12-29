@@ -7,11 +7,13 @@ import  './UserProfileComponent.css';
 import { Button, Card, Col, Container} from 'react-bootstrap';
 import { useState } from 'react';
 import EditProfileComponent from './ProfileForms/EditProfileComponent';
+import EditStreamComponent from './ProfileForms/EditStreamComponent';
 
 
 export default observer(function UserProfileComponent( ) {
     const {userStore: { logout, user}} = useStore();
     const [isEditUserProfile, setIsUserProfile] = useState(false);
+    const [isEditStream, setIsStream] = useState(false);
     
    return ( 
      <>
@@ -44,7 +46,7 @@ export default observer(function UserProfileComponent( ) {
 <Card className='ml-3 mr-3 mt-2 mb-5 '>
 
     <Button style={{ borderRadius: '5px', marginLeft: '2vh', marginRight: '2vh' }} className="btn mt-1" onClick={() => setIsUserProfile(true)}>Edit Profile</Button>
-    <Button style={{ borderRadius: '5px', marginLeft: '2vh', marginRight: '2vh' }} className="mt-1 " >Edit Stream</Button>
+    <Button style={{ borderRadius: '5px', marginLeft: '2vh', marginRight: '2vh' }} className="mt-1 " onClick={() => setIsStream(true)}>Edit Stream</Button>
     <Button style={{ borderRadius: '5px', marginLeft: '2vh', marginRight: '2vh' }} className="mt-1">Stream Details</Button>
     <Button style={{ borderRadius: '5px', marginLeft: '2vh', marginRight: '2vh' }} className="mt-1" >Settings</Button>
     <button className="mt-3 mb-3" style={{ marginLeft: '30%', marginRight: '30%', marginBottom: '5%' }} onClick={() => logout()}>Log Out</button>
@@ -54,8 +56,9 @@ export default observer(function UserProfileComponent( ) {
      <div className="col-md-8 s-12 ">  
       <Card className='mt-5 FormInput'>
          
-         {isEditUserProfile? <EditProfileComponent /> : <h1>No page</h1>}
-     
+         {isEditUserProfile? <EditProfileComponent /> : null}
+
+         {isEditStream? <EditStreamComponent /> : null}
       </Card>
      </div>
      </div>  

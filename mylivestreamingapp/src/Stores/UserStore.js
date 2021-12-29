@@ -8,6 +8,8 @@ import { store } from "./store";
 
 export default class UserStore {
     user = {};
+    stream = {};
+
     constructor() {
         makeAutoObservable(this)
 
@@ -59,6 +61,10 @@ export default class UserStore {
             store.commonStore.setToken(user.token);
             runInAction(() => this.user = user)
             console.log(this.user);
+            var streamcreds = { title: `${user.userName}'s livestream`, description: "No description yet", userId: user.id }
+            console.log(streamcreds);
+            const stream = await agent.Streams.create(streamcreds);
+            runInAction(() => this.stream = stream);
             history.push('/user-profile')
         } catch (error) {
             throw error;

@@ -58,10 +58,14 @@ const Account = {
     Update: (user) => request.put(`/api/Users/update/${user.id}`, user)
 }
 
+const Streams = {
+    create: (stream) => request.post(`/api/Streams`, stream)
+}
 const agent = {
 
     Users,
-    Account
+    Account,
+    Streams
 }
 
 export default agent;
