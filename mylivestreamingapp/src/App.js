@@ -20,7 +20,7 @@ function App() {
   //if(!commonStore.appLoaded) return <LoadingComponent content='Loading ap... />'
 
   return (
-    <div className="App">
+    <div>
 
       <RouteComponent />
     </div>

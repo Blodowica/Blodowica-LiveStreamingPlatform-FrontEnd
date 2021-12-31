@@ -76,7 +76,7 @@ export default class UserStore {
             const user = await agent.Account.Update(creds);
             runInAction(() => this.user = user);
         } catch (error) {
-
+            console.log(error);
         }
 
     }

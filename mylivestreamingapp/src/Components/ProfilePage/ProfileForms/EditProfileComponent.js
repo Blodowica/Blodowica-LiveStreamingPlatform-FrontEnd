@@ -47,7 +47,7 @@ export default observer(function EditProfileComponent() {
                         <TextInputComponent name='lastName' placeholder='Last Name' label='Last name' />
                         <TextInputComponent name='email' placeholder='Email' label='Email' />
                         <Button>Edit/Cancel</Button>
-                        <Button loading='loading' disabled={!dirty || !isValid} floated='right' positive type='submit' content='Submit' />
+                        <Button disabled={!dirty || !isValid} floated='right' positive type='submit' content='Submit' />
                     </Form>
                 )}
             </Formik>

@@ -59,7 +59,8 @@ const Account = {
 }
 
 const Streams = {
-    create: (stream) => request.post(`/api/Streams`, stream)
+    create: (stream) => request.post(`/api/Streams`, stream),
+    GetUserStream: (userId) => request.get(`/api/Streams/user-stream/${userId}`)
 }
 const agent = {
 

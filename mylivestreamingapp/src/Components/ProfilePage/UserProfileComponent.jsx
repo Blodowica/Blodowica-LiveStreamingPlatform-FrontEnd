@@ -17,7 +17,7 @@ export default observer(function UserProfileComponent( ) {
     
    return ( 
      <>
- <div className='fill-window background'>
+ <div className=' background'>
         <NavBar />
 
 <Container fluid>  
@@ -27,7 +27,7 @@ export default observer(function UserProfileComponent( ) {
    <div className='row'>
 
     <div className='col md-6 xs-12'>
-    <Card className='mt-5 sidetab ' style={{ width: '35vh' }}>
+    <Card className='mt-5 sidetab ml-4' style={{ width: '35vh' }}>
 
 <Col className='d-flex justify-content-center mb-5'>
     <img className='profilePic' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSya5dwz7sppH6NGJVip5KpNHbO6feSmMVJoQ&usqp=CAU' alt="profile picture" />
@@ -53,7 +53,7 @@ export default observer(function UserProfileComponent( ) {
 </Card>
 </Card>
  </div>
-     <div className="col-md-8 s-12 ">  
+     <div className="col-md-8 col-xs-12 ">  
       <Card className='mt-5 FormInput'>
          
          {isEditUserProfile? <EditProfileComponent /> : null}
