@@ -3,11 +3,11 @@ import { store } from "../Stores/store";
 
 
 //simulates the delay when loading data from the database
-const sleep = (delay) => {
-    return new Promise((resole) => {
-        setTimeout(resole, delay)
-    })
-}
+// const sleep = (delay) => {
+//     return new Promise((resole) => {
+//         setTimeout(resole, delay)
+//     })
+// }
 
 
 axios.defaults.baseURL = `${process.env.REACT_APP_BACKEND_API_URL}`
@@ -21,15 +21,15 @@ axios.interceptors.request.use(config => {
 })
 
 
-axios.interceptors.response.use(async response => {
-    try {
-        await sleep(1000);
-        return response;
-    } catch (error) {
-        console.log(error);
-        return await Promise.reject(error);
-    }
-})
+// axios.interceptors.response.use(async response => {
+//     try {
+//         await sleep(1000);
+//         return response;
+//     } catch (error) {
+//         console.log(error);
+//         return await Promise.reject(error);
+//     }
+// })
 
 const responseBody = (response) => response.data;
 const request = {
@@ -60,7 +60,8 @@ const Account = {
 
 const Streams = {
     create: (stream) => request.post(`/api/Streams`, stream),
-    GetUserStream: (userId) => request.get(`/api/Streams/user-stream/${userId}`)
+    GetUserStream: (userId) => request.get(`/api/Streams/user-stream/${userId}`),
+    updateUserStream: (stream) => request.put(`/api/Streams/${stream.streamId}`, stream)
 }
 const agent = {
 

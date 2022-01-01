@@ -20,7 +20,7 @@ export function RegistrationComponents({switchToLogin}) {
   const [repeatPassword, setRepeatPassword] = useState("");
   
 
-  function handleSubmit(firstName, lastName, userName, email, password, repeatPassword, streamKey)
+  function handleSubmit(firstName, lastName, userName, email, password, repeatPassword)
   {
     //make sure form not empty
     if(!firstName) return null;
@@ -31,26 +31,31 @@ export function RegistrationComponents({switchToLogin}) {
     if(!repeatPassword) return null;
     // 
     function validateEmail(email) {
+      console.log('validate email Fuction');
+
       const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(String(email).toLowerCase());
     }
+    
     function arePasswordsSame() {
+      
       if (password && repeatPassword && password === repeatPassword) {
         return true
       }
       return false
     }
-
-    function CreateStreamKey(streamKey){
-      setStreamKey(`${userName}?key=supersecret`)
-      return streamKey;
+    //  STILL NEED TO MAKE IT SO THE STREAMKEY IS A RANDOM STRING/////////////\\\\\\\\\\\////////////////
+    function CreateStreamKey(){
+      setStreamKey(`${userName}?key=supersecret`);
+     console.log(streamKey);
     }
-  //still need to check if userName is already taken !
+    CreateStreamKey();
+    //still need to check if userName is already taken !
     if (!validateEmail) return alert("Email is in wrong format");
-    if (!arePasswordsSame()) return alert("Passwords aren't same")
-    if(CreateStreamKey === null) return alert("Something went wrong please try again!")
+    if (!arePasswordsSame()) return alert("Passwords aren't same");
+    if(streamKey == null) return alert("Something went wrong please try again!");
 
-    userStore.registerUser(firstName, lastName, userName, email, password)
+    userStore.registerUser(firstName, lastName, userName, email, password, streamKey);
   }
 
         return (
@@ -84,7 +89,7 @@ export function RegistrationComponents({switchToLogin}) {
                 <GiGamepad size="1.6em" />
 
               </InputGroup.Text>
-              <Form.Control  placeholder="Username" value={userName} onChange={(userName) => setUserName(userName.target.value)}/>
+              <Form.Control  placeholder="Username" value={userName} maxLength={15} onChange={(userName) => setUserName(userName.target.value)}/>
          
             </InputGroup>
 
@@ -119,7 +124,7 @@ export function RegistrationComponents({switchToLogin}) {
             <Row>
               <Col className="text-center">
 
-                <Button className="rounded" style={{ paddingLeft: "30px", paddingRight: "30px", backgroundColor: "#6933C8", color: "white" }} variant="register" size="lg" onClick={() =>handleSubmit(firstName, lastName, userName, email, password, repeatPassword)}>
+                <Button className="rounded" style={{ paddingLeft: "30px", paddingRight: "30px", backgroundColor: "#6933C8", color: "white" }} variant="register" size="lg" onClick={() =>handleSubmit(firstName, lastName, userName, email, password, repeatPassword) }>
                   Register
                 </Button>
               </Col>

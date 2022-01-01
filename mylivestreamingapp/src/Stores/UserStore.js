@@ -54,9 +54,9 @@ export default class UserStore {
         }
     }
 
-    registerUser = async (firstName, lastName, userName, email, password) => {
+    registerUser = async (firstName, lastName, userName, email, password, streamKey) => {
         try {
-            var creds = { firstName, lastName, userName, email, password, };
+            var creds = { firstName, lastName, userName, email, password, streamKey };
             const user = await agent.Account.register(creds);
             store.commonStore.setToken(user.token);
             runInAction(() => this.user = user)

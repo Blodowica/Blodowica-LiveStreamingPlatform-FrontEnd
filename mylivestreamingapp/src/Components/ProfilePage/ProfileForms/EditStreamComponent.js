@@ -8,7 +8,7 @@ import * as  Yup from 'yup';
 import LoadingComponent from "../../common/LoadingComponent";
 
 export default observer(function EditStreamComponent() {
-    const { streamStore: { stream, getUserStream, loadingInitial } } = useStore();
+    const { streamStore: { stream, getUserStream, loadingInitial, UpdateUserStream } } = useStore();
     const { userStore: { user } } = useStore();
 
 
@@ -35,7 +35,9 @@ export default observer(function EditStreamComponent() {
         title: Yup.string().required('Stream title is required '),
         description: Yup.string().required('Stream title is required ')
     })
-
+    function handleStreamSubmit(stream) {
+        UpdateUserStream(stream);
+    }
 
     return (
 
@@ -44,8 +46,8 @@ export default observer(function EditStreamComponent() {
             <Formik
                 validationSchema={ValidationSchema}
                 enableReinitialize
-                initialValues={{ title: stream.title, description: stream.description, userId: stream.userId, streamId: stream.streamId }}
-                onSubmit={(values) => console.log(values)}
+                initialValues={stream}
+                onSubmit={values => handleStreamSubmit(values)}
             >
                 {({ handleSubmit, isValid, isSubmitting, dirty }) => (
                     <Form className="ui form" onSubmit={handleSubmit} autoComplete="off">
