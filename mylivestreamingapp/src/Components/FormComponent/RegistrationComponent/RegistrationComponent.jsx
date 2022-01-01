@@ -45,17 +45,16 @@ export function RegistrationComponents({switchToLogin}) {
       return false
     }
     //  STILL NEED TO MAKE IT SO THE STREAMKEY IS A RANDOM STRING/////////////\\\\\\\\\\\////////////////
-    function CreateStreamKey(){
-      setStreamKey(`${userName}?key=supersecret`);
-     console.log(streamKey);
+    function  CreateStreamKey(){
+     var skey =  `${userName}?key=supersecret`;
+     console.log(skey);
+     return skey;
     }
-    CreateStreamKey();
     //still need to check if userName is already taken !
     if (!validateEmail) return alert("Email is in wrong format");
     if (!arePasswordsSame()) return alert("Passwords aren't same");
-    if(streamKey == null) return alert("Something went wrong please try again!");
 
-    userStore.registerUser(firstName, lastName, userName, email, password, streamKey);
+    userStore.registerUser(firstName, lastName, userName, email, password, CreateStreamKey() );
   }
 
         return (
