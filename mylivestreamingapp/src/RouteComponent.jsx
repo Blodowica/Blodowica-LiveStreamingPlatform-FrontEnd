@@ -6,7 +6,7 @@ import { VideoPLayerComponent } from './Components/VideoPlayer/VIdeoPlayerCompon
 
 const RouteComponent = () => {
     return (
-<div>
+
      <Switch>
      <Route path={'/videoPlayer'} component={VideoPLayerComponent} />
      <Route path='/Form' component={FormComponent } />
@@ -14,7 +14,7 @@ const RouteComponent = () => {
      <Route path='/' component={FormComponent } />
     </Switch>
 
-</div>
+
 
 
       );
