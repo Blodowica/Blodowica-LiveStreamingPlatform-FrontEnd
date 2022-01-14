@@ -38,9 +38,9 @@ export default observer(function UserProfileComponent( ) {
 <Col className='mb-5 ' >
     <h3 style={{ textAlign: 'center' }}>Username : {user.userName}</h3>
     <h3 style={{ textAlign: 'center' }}>Name : {user.firstName}  {user.lastName}</h3>
-    <h3 style={{ textAlign: 'center' }}>Email</h3>
+  
     <h3 style={{ textAlign: 'center' }}>Bio</h3>
-    <h3>{user.image}</h3>
+    <h3>{user.image}</h3>   
     <div style={{ width: '200px' }}>
     </div>
 </Col>

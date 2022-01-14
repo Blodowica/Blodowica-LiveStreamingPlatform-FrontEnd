@@ -1,21 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactHls from 'react-hls'
 import NavBar from '../common/NavBar';
 import './VideoPlayerComponent.css'
 import {Form, Button, Comment, Header} from 'semantic-ui-react'
+import { useStore } from '../../Stores/store';
+import LoadingComponent from '../common/LoadingComponent';
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 export function VideoPLayerComponent()
 {
+
+
+
+
   return(
-    <div>
+    <div className='videobackground '>
     <NavBar />
       <h1>LiveStream Video PLayer </h1>
+      {/* Use axio get check if the responds does not equal 0 or refused and then play video otherwise show image or something*/}
            <div   className='leftMargin'>
+          
             <ReactHls url='http://localhost:8080/hls/test.m3u8' 
-            width='1120px'
-            height='560px'
+            width='1120vh'
+            height='650vh'
+            hlsConfig={{
+              liveDurationInfinity: true
+              
+            }}
+
              />
+            <h4>
+           Username: Streamer Username placeholder 
+           </h4>
+           <h4>
+           Title: User Title PlaceHolder
+            </h4>
          </div>
 
          <div className='chatBox'>

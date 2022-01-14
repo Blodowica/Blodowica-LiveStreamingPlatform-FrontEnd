@@ -8,7 +8,7 @@ import TextInputComponent from "../../Input/TextInputComponent";
 
 
 export default observer(function EditProfileComponent() {
-    const { userStore: { user, updateUser } } = useStore();
+    const { userStore: { user, updateUser, loading } } = useStore();
     const [currentUser] = useState({
         id: user.id,
         userName: user.userName,
@@ -47,7 +47,7 @@ export default observer(function EditProfileComponent() {
                         <TextInputComponent name='lastName' placeholder='Last Name' label='Last name' />
                         <TextInputComponent name='email' placeholder='Email' label='Email' />
                         <Button>Edit/Cancel</Button>
-                        <Button disabled={!dirty || !isValid} floated='right' positive type='submit' content='Submit' />
+                        <Button loading={loading} disabled={!dirty || !isValid} floated='right' positive type='submit' content='Submit' />
                     </Form>
                 )}
             </Formik>

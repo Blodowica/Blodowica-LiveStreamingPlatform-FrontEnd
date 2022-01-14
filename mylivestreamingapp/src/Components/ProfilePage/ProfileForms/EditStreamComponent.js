@@ -8,7 +8,7 @@ import * as  Yup from 'yup';
 import LoadingComponent from "../../common/LoadingComponent";
 
 export default observer(function EditStreamComponent() {
-    const { streamStore: { stream, getUserStream, loadingInitial, UpdateUserStream } } = useStore();
+    const { streamStore: { stream, getUserStream, loadingInitial, UpdateUserStream, loading } } = useStore();
     const { userStore: { user } } = useStore();
 
 
@@ -42,7 +42,7 @@ export default observer(function EditStreamComponent() {
     return (
 
         <Segment clearing>
-            <Header className="mb-5 mt-2"> <h1 style={{ textAlign: 'center' }}>Edit User Information</h1></Header>
+            <Header className="mb-5 mt-2"> <h1 style={{ textAlign: 'center' }}>Edit Stream Information</h1></Header>
             <Formik
                 validationSchema={ValidationSchema}
                 enableReinitialize
@@ -55,7 +55,7 @@ export default observer(function EditStreamComponent() {
                         {/* CHANGE INTO TEXTINPUTARE LATER*/}
                         <TextInputComponent name='description' placeholder='Description ' label='Description' />
                         <Button>Edit/Cancel</Button>
-                        <Button disabled={!dirty || !isValid} floated='right' positive type='submit' content='Submit' />
+                        <Button loading={loading} disabled={!dirty || !isValid} floated='right' positive type='submit' content='Submit' />
                     </Form>
                 )}
             </Formik>

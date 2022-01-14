@@ -4,6 +4,7 @@ import { makeAutoObservable, runInAction } from "mobx";
 export default class StreamStore {
     stream = {};
     loadingInitial = false;
+    loading = false;
 
     constructor() {
         makeAutoObservable(this)
@@ -22,13 +23,16 @@ export default class StreamStore {
     UpdateUserStream = async (creds) => {
         this.setLoadingInitial(true);
         try {
+            runInAction(() => this.loading = true);
             console.log(creds);
             const stream = await agent.Streams.updateUserStream(creds);
-            console.log(stream);
+
             runInAction(() => this.stream = stream);
+            runInAction(() => this.loading = false)
             this.setLoadingInitial(false);
         } catch (error) {
             console.log(error);
+            runInAction(() => this.loading = false)
             this.setLoadingInitial(false);
         }
     }

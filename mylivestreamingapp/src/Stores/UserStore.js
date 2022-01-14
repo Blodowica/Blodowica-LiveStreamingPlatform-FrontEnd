@@ -9,6 +9,7 @@ import { store } from "./store";
 export default class UserStore {
     user = {};
     stream = {};
+    loading = false;
 
     constructor() {
         makeAutoObservable(this)
@@ -48,7 +49,6 @@ export default class UserStore {
         try {
             const user = await agent.Account.current();
             runInAction(() => this.user = user);
-
         } catch (error) {
             console.log(error);
         }
@@ -73,10 +73,15 @@ export default class UserStore {
 
     updateUser = async (creds) => {
         try {
+            runInAction(() => this.loading = true)
             const user = await agent.Account.Update(creds);
             runInAction(() => this.user = user);
+            runInAction(() => this.loading = false)
         } catch (error) {
             console.log(error);
+            runInAction(() => this.loading = false)
+
+
         }
 
     }
