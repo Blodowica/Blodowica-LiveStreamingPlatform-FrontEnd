@@ -14,7 +14,7 @@ export default class CommentStore {
     createHubConnection = (streamId) => {
         if (store.streamStore.stream) {
             this.hubConnection = new SignalR.HubConnectionBuilder()
-                .withUrl('https://localhost:5000/chat?streamId=' + streamId, {
+                .withUrl(`${process.env.REACT_APP_BACKEND_API_URL}/chat?streamId=` + streamId, {
                     accessTokenFactory: () => store.userStore.user?.token
 
                 })
