@@ -7,15 +7,15 @@ export default observer(function ChatComponent() {
     const { streamStore: { stream } } = useStore()
     const { commentStore } = useStore();
 
-    // useEffect(() => {
-    //     if (stream) {
-    //         commentStore.createHubConnection(stream.streamId);
-    //     }
-    //     return () => {
-    //         commentStore.clearComments();
-    //     }
+    useEffect(() => {
+        if (stream) {
+            commentStore.createHubConnection(stream.streamId);
+        }
+        return () => {
+            commentStore.clearComments();
+        }
 
-    // })
+    })
     return (
 
         <div className='chatBox'>
