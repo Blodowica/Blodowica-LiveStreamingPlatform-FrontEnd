@@ -9,6 +9,7 @@ const NavBar = () => {
      <NavLink className="nav-item nav-link active" to='../form'>forms</NavLink>
      <NavLink to='../user-profile'>Profile Page</NavLink>
      <NavLink to="../videoplayer">Video Player</NavLink>
+     <NavLink to="../homepage">Home page</NavLink>
   
    </nav>
      

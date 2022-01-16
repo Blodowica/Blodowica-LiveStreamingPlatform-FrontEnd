@@ -12,15 +12,19 @@ export default observer(function EditStreamComponent() {
     const { userStore: { user } } = useStore();
 
 
-    useEffect(async () => {
+    useEffect(() => {
 
         try {
-            // console.log(stream.title);
-            if (stream.title === undefined) {
+
+            if (stream === undefined) {
+                GetUserStreamFunction()
+            }
+            async function GetUserStreamFunction() {
                 await getUserStream(user.id);
+                console.log(stream);
+
 
             }
-
         } catch (error) {
             console.log(error);
         }

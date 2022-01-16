@@ -19,7 +19,7 @@ export default observer(function LoginComponent({switchToRegistration}) {
           <Card.Body>
             <Card.Text className="text-center display-3 mb-3">Login</Card.Text>
            
-                               
+                          
             <Form>
                {/*<h4 style={{textAlign:"center", color: 'red', backgroundColor: 'lightred' }}>{errorMessage}</h4>*/}
               <InputGroup className="my-3">

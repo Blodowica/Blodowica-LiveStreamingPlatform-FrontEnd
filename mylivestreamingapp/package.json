@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@microsoft/signalr": "^6.0.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -24,6 +25,7 @@
     "react-player": "^2.9.0",
     "react-router-dom": "5.3",
     "react-scripts": "4.0.3",
+    "react-signalr": "^0.2.4",
     "react-yup": "^1.23.0",
     "semantic": "^0.0.1",
     "semantic-ui-css": "^2.4.1",
@@ -54,5 +56,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^9.2.1"
   }
 }

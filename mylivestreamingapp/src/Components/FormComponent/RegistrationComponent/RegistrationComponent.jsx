@@ -47,7 +47,7 @@ export function RegistrationComponents({switchToLogin}) {
     //  STILL NEED TO MAKE IT SO THE STREAMKEY IS A RANDOM STRING/////////////\\\\\\\\\\\////////////////
     function  CreateStreamKey(){
      var skey =  `${userName}?key=supersecret`;
-     console.log(skey);
+     //console.log(skey);
      return skey;
     }
     //still need to check if userName is already taken !
