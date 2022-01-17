@@ -41,15 +41,20 @@ if(stream == undefined && user.id != undefined)
 if (loadingInitial) return <LoadingComponent />
   return(
 
-    <div className='videobackground '>
+    <div className='videobackground fill-window'>
     <NavBar />
- 
+   <div className='row' >
+    
+
       {/* Use axio get check if the responds does not equal 0 or refused and then play video otherwise show image or something*/}
-           <div className='leftMargin'>
+           <div className='col-12 col-sm-12 col-md-10 col-xl-9 ml-5 col-lg-6'>
           
             <ReactHls url='http://localhost:8080/hls/test.m3u8' 
-            width='1120vh'
-            height='650vh'
+               autoPlay={false}
+               controls={true}
+               width="85%"
+               height="auto"
+               
             hlsConfig={{
               liveDurationInfinity: true
               
@@ -59,13 +64,14 @@ if (loadingInitial) return <LoadingComponent />
             <h4 style={{color: 'white'}}>
            Username: {user.userName}
            </h4>
-           <h4 style={{color: 'white'}}>
+           <h4 style={{color: 'white', marginBottom: '10%'}}>
            Title: { stream?  stream.title : null}
             </h4>
          </div>
          {/* {stream? <ChatComponent stream={stream}/> : alert("Stream is empty") } */}
-         <div className='chatBox'>
+         <div className='chatBox col-12 col-md-8 ml-5'>
         <ChatComponent/>
+         </div>
          </div>
       
       </div>

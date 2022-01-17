@@ -57,6 +57,7 @@ export default class CommentStore {
     addComments = async (values) => {
         //get current user
         var user = await store.userStore.getUser();
+        console.log(user);
 
         values.streamId = 26;
 

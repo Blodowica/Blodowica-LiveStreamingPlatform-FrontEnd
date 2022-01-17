@@ -22,12 +22,7 @@
 .chatBox
 {
 
-    position: absolute;
-    width: 454px;
-    height: 634px;
-    left: 1354px;
-    top: 164px;  
-    
+    position: relative;
  flex: 1; /* Allows the message area to expand with viewport height */
 display: flex;
 flex-direction: column;
