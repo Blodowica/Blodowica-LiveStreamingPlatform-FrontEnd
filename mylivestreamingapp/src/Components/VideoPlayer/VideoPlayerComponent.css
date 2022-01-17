@@ -1,7 +1,10 @@
 .videobackground
 {
 
- 
+    background-color: greenyellow;
+    background-image: url('https://wallup.net/wp-content/uploads/2017/11/23/502751-Flatdesign-symbols-Brandenburg_Gate-Christ_the_Redeemer.jpg');
+    height: 100vh;
+    width: 100vw;
     height: 100vh;
     width: 100vw;
     background-position: center;
@@ -25,6 +28,8 @@
     left: 1354px;
     top: 164px;  
     
-    background: #EDEDED;
-    border-radius: 20px;
+ flex: 1; /* Allows the message area to expand with viewport height */
+display: flex;
+flex-direction: column;
+overflow-y: scroll;
 }

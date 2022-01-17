@@ -17,6 +17,15 @@ export default observer(function UserProfileComponent( ) {
     const [isEditStream, setIsStream] = useState(false);
     const [isEditStreamDetails, setIsStreamDetails] = useState(false);
     
+
+    function openEdituserPageForm()
+    {
+        if(isEditUserProfile == true)
+        {
+        window.location.reload();
+        <EditProfileComponent />
+        }
+    }
    return ( 
      <>
  <div className=' background'>
@@ -58,8 +67,8 @@ export default observer(function UserProfileComponent( ) {
      <div className="col-md-8 col-xs-12 ">  
       <Card className='mt-5 FormInput'>
          
-         {isEditUserProfile? <EditProfileComponent /> : null}
-
+         {isEditUserProfile?  <EditProfileComponent /> : null}
+   
          {isEditStream? <EditStreamComponent /> : null}
 
          {isEditStreamDetails? <StreamDetailComponent /> : null}

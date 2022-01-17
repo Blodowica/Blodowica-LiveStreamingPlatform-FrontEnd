@@ -15,7 +15,10 @@ export default class CommentStore {
         if (store.streamStore.stream) {
             this.hubConnection = new SignalR.HubConnectionBuilder()
                 .withUrl(`${process.env.REACT_APP_BACKEND_API_URL}/chat?streamId=` + streamId, {
-                    accessTokenFactory: () => store.userStore.user?.token
+
+                    accessTokenFactory: () => {
+                        return store.userStore.user.token
+                    },
 
                 })
                 .withAutomaticReconnect()
@@ -51,15 +54,19 @@ export default class CommentStore {
         this.stopHubConnection();
     }
 
-    // addComments = async (values: any) => {
-    //     values.activityId = store.activityStore.selectedActivity?.id;
+    addComments = async (values) => {
+        //get current user
+        var user = await store.userStore.getUser();
 
-    //     try {
-    //         await this.hubConnection?.invoke('SendComment', values);
-    //     } catch (error) {
-    //         console.log(error);
+        values.streamId = 26;
 
-    //     }
-    // }
+        console.log(values);
+        try {
+            await this.hubConnection.invoke('SendComment', values);
+        } catch (error) {
+            console.log(error);
+
+        }
+    }
 
 }

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cypress/react": "^5.12.1",
     "@microsoft/signalr": "^6.0.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -30,6 +31,7 @@
     "semantic": "^0.0.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.4",
+    "signalr": "^2.4.2",
     "web-vitals": "^1.1.2",
     "yup": "^0.29.3"
   },

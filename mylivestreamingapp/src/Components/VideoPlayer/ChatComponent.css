@@ -1,0 +1,19 @@
+.chatBox{
+  
+    
+    background: gray;
+    border-radius: 20px;
+    flex: 1; /* Allows the message area to expand with viewport height */
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+   
+
+}
+
+.chatForm
+{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}

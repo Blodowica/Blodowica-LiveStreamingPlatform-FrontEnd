@@ -56,16 +56,18 @@ if (loadingInitial) return <LoadingComponent />
             }}
 
              />
-            <h4>
+            <h4 style={{color: 'white'}}>
            Username: {user.userName}
            </h4>
-           <h4>
+           <h4 style={{color: 'white'}}>
            Title: { stream?  stream.title : null}
             </h4>
          </div>
          {/* {stream? <ChatComponent stream={stream}/> : alert("Stream is empty") } */}
+         <div className='chatBox'>
         <ChatComponent/>
-       { console.log('passed to component')}
+         </div>
+      
       </div>
   );
 })

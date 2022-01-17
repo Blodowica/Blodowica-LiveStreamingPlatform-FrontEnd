@@ -1,10 +1,11 @@
 .background
 {
-    background-image: url('../../Assets/ProfilePageBackground.svg');
+    background-color: greenyellow;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6015441d-9676-4243-afd8-6da6f5f1f70b/dcz8hjb-ddaadaad-29b4-46ba-a492-351854b909d5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzYwMTU0NDFkLTk2NzYtNDI0My1hZmQ4LTZkYTZmNWYxZjcwYlwvZGN6OGhqYi1kZGFhZGFhZC0yOWI0LTQ2YmEtYTQ5Mi0zNTE4NTRiOTA5ZDUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.W9odAGIuUZJYtvFhargFh6OI82tWZ4yq6eg1aSlJqEQ');
     height: 100vh;
     width: 100vw;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
 }
 .sidetab
