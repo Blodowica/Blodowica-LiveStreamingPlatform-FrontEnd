@@ -1,7 +1,7 @@
 .chatBox{
   
     
-    background: gray;
+    background: #EDEDED;
     border-radius: 20px;
     flex: 1; /* Allows the message area to expand with viewport height */
     display: flex;

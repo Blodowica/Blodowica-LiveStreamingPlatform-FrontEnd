@@ -4,13 +4,15 @@ import React, { useEffect } from "react";
 import { Card } from 'react-bootstrap';
 import { Button, Comment, Header } from 'semantic-ui-react'
 import { useStore } from "../../Stores/store";
+import UserStore from '../../Stores/UserStore';
 import LoginComponet from '../FormComponent/LoginComponent/LoginComponet';
 import MyTeXtArea from '../Input/TextAreaInputComponent';
 export default observer(function ChatComponent() {
 
     const { streamStore: { stream } } = useStore()
     const { commentStore } = useStore();
-
+    const { userStore: { user } } = useStore();
+    const userId = user.id
 
     useEffect(() => {
         if (stream) {
@@ -20,6 +22,8 @@ export default observer(function ChatComponent() {
             commentStore.clearComments();
         }
     }, [commentStore]);
+
+    { console.log(userId); }
 
 
     // useEffect(() => {
@@ -63,7 +67,8 @@ export default observer(function ChatComponent() {
 
                     <Formik
                         onSubmit={(values, { resetForm }) => commentStore.addComments(values).then(() => resetForm())}
-                        initialValues={{ body: '' }}
+                        initialValues={{ body: '', userId: userId }}
+
                     >
                         {({ isSubmitting, isValid }) => (
 
