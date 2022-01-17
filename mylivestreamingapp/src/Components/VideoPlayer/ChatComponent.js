@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { Card } from 'react-bootstrap';
 import { Button, Comment, Header } from 'semantic-ui-react'
 import { useStore } from "../../Stores/store";
+import LoginComponet from '../FormComponent/LoginComponent/LoginComponet';
 import MyTeXtArea from '../Input/TextAreaInputComponent';
 export default observer(function ChatComponent() {
 
@@ -46,7 +47,7 @@ export default observer(function ChatComponent() {
                         <Comment key={comment.id}>
                             <Comment.Avatar src='/images/avatar/small/matt.jpg' />
                             <Comment.Content>
-                                <Comment.Author as='a'>{comment.userName}</Comment.Author>
+                                <Comment.Author as='a'>{comment.displayName}</Comment.Author>
                                 <Comment.Metadata>
                                     {/* <div>{formatDistanceToNow(comment.createdAt)} ago</div> */}
                                 </Comment.Metadata>
