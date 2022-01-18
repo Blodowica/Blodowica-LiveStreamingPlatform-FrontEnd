@@ -57,7 +57,7 @@ export default class CommentStore {
 
     addComments = async (values) => {
 
-        values.streamId = 26;
+        values.streamId = 6;
 
         console.log(values);
         try {
