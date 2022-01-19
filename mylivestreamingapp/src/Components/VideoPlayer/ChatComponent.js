@@ -49,7 +49,7 @@ export default observer(function ChatComponent() {
                 <Comment.Group>
                     {commentStore.comments.map(comment => (
                         <Comment key={comment.id}>
-                            <Comment.Avatar src='/images/avatar/small/matt.jpg' />
+                            <Comment.Avatar src='.\Assets\user.png' />
                             <Comment.Content>
                                 <Comment.Author as='a'>{comment.displayName}</Comment.Author>
                                 <Comment.Metadata>
