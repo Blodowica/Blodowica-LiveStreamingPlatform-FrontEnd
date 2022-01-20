@@ -59,7 +59,7 @@ export default class CommentStore {
     addComments = async (values) => {
 
         values.streamId = 6;
-        if (values.body == "" || " ") { return alert("The text field is required") }
+
 
         try {
             await this.hubConnection.invoke('SendComment', values);
