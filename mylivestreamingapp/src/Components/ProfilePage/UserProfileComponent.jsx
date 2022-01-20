@@ -47,7 +47,7 @@ export default observer(function UserProfileComponent( ) {
 <Col className='mb-5 ' >
     {console.log(`userlastname: ${user.lastname}`)}
     <h3 style={{ textAlign: 'center' }}>Username : {user.userName}</h3>
-    <h3 style={{ textAlign: 'center' }}>Name : {user.firstName}  {user.lastname}</h3>
+    <h3 style={{ textAlign: 'center' }}>Name : {user.firstName}  {user.lastName ? user.lastName : user.lastname}</h3>
   
     {/* <h3 style={{ textAlign: 'center' }}>Bio</h3> */}
     <h3>{user.image}</h3>  

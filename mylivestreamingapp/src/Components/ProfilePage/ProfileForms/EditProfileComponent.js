@@ -46,7 +46,6 @@ export default observer(function EditProfileComponent() {
                         <TextInputComponent name='firstName' placeholder='First Name' label='First name' />
                         <TextInputComponent name='lastName' placeholder='Last Name' label='Last name' />
                         <TextInputComponent name='email' placeholder='Email' label='Email' />
-                        <Button>Edit/Cancel</Button>
                         <Button loading={loading} disabled={!dirty || !isValid} floated='right' positive type='submit' content='Submit' />
                     </Form>
                 )}

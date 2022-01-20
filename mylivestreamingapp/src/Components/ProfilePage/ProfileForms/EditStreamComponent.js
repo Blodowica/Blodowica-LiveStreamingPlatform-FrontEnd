@@ -6,6 +6,7 @@ import { useStore } from "../../../Stores/store";
 import { observer } from "mobx-react-lite";
 import * as  Yup from 'yup';
 import LoadingComponent from "../../common/LoadingComponent";
+import MyTeXtArea from "../../Input/TextAreaInputComponent";
 
 export default observer(function EditStreamComponent() {
     const { streamStore: { stream, getUserStream, loadingInitial, UpdateUserStream, loading } } = useStore();
@@ -57,8 +58,8 @@ export default observer(function EditStreamComponent() {
                     <Form className="ui form" onSubmit={handleSubmit} autoComplete="off">
                         <TextInputComponent name='title' placeholder='Title' label='Title' />
                         {/* CHANGE INTO TEXTINPUTARE LATER*/}
-                        <TextInputComponent name='description' placeholder='Description ' label='Description' />
-                        <Button>Edit/Cancel</Button>
+                        <MyTeXtArea rows={3} placeholder="Description" name='description' label='Description' />
+
                         <Button loading={loading} disabled={!dirty || !isValid} floated='right' positive type='submit' content='Submit' />
                     </Form>
                 )}
