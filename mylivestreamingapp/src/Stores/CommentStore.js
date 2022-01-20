@@ -1,5 +1,6 @@
 import * as SignalR from "@microsoft/signalr"
 import { makeAutoObservable, runInAction } from "mobx";
+import { string } from "yup";
 import { store } from "./store";
 
 
@@ -58,8 +59,8 @@ export default class CommentStore {
     addComments = async (values) => {
 
         values.streamId = 6;
+        if (values.body == "" || " ") { return alert("The text field is required") }
 
-        console.log(values);
         try {
             await this.hubConnection.invoke('SendComment', values);
         } catch (error) {
