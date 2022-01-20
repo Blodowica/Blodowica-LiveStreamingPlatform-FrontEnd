@@ -102,7 +102,7 @@ describe('Login Rave listereaming test', () => {
 
 describe('Register Rave listereaming test', () => {
 
-    it('register in user succesfully', () => {
+    it('register a user succesfully with a stream', () => {
 
         function makeid(length) {
             var result = '';
@@ -145,4 +145,42 @@ describe('Register Rave listereaming test', () => {
 
     })
 
+    it('Logout user from dropdown test', () => {
+        /* ==== Generated with Cypress Studio ==== */
+        cy.visit('http://localhost:3000/');
+        cy.get(':nth-child(1) > .form-control').clear();
+        cy.get(':nth-child(1) > .form-control').type('bob@test.com');
+        cy.get(':nth-child(2) > .form-control').clear();
+        cy.get(':nth-child(2) > .form-control').type('Pa$$w0rd');
+        cy.get('.rounded').click();
+        cy.url().should('include', '/user-profile')
+        cy.get('.top > .dropdown').click();
+        cy.get('div.item > .text').click();
+        cy.url().should('include', '/')
+        cy.url().should(() => {
+            expect(localStorage.getItem('jwt')).length.equal(null)
+        })
+        /* ==== End Cypress Studio ==== */
+    })
+
+    it('Logout user from profile button test', () => {
+        /* ==== Generated with Cypress Studio ==== */
+        cy.visit('http://localhost:3000/');
+
+        cy.url().should('include', '/')
+        cy.url().should(() => {
+            expect(localStorage.getItem('jwt')).length.equal(null)
+        })
+        /* ==== End Cypress Studio ==== */
+        /* ==== Generated with Cypress Studio ==== */
+        cy.get(':nth-child(1) > .form-control').clear();
+        cy.get(':nth-child(1) > .form-control').type('bob@test.com');
+        cy.get(':nth-child(2) > .form-control').clear();
+        cy.get(':nth-child(2) > .form-control').type('Pa$$w0rd');
+        cy.get('.rounded').click();
+        cy.get('.mt-3').click();
+        /* ==== End Cypress Studio ==== */
+    })
+
 })
+

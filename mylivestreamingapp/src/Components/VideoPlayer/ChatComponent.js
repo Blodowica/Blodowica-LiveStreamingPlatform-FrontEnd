@@ -16,7 +16,7 @@ export default observer(function ChatComponent() {
 
     useEffect(() => {
         if (stream) {
-            commentStore.createHubConnection(6);
+            commentStore.createHubConnection(26);
         }
         return () => {
             commentStore.clearComments();
