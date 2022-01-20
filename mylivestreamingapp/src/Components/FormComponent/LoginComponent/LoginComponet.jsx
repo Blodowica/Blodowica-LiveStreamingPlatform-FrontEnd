@@ -27,7 +27,7 @@ export default observer(function LoginComponent({switchToRegistration}) {
                   <MdEmail size="1.5em" />
   
                 </InputGroup.Text>
-                <Form.Control value={email} onChange={(email) => setEmail(email.target.value)} placeholder="Email" />
+                <Form.Control value={email} onChange={(email) => setEmail(email.target.value)} placeholder="Email"  name='emailInput'/>
   
               </InputGroup>
   
@@ -36,7 +36,7 @@ export default observer(function LoginComponent({switchToRegistration}) {
                   <MdLock size="1.5em" />
   
                 </InputGroup.Text>
-                <Form.Control value={password} onChange={(password) => setPassword(password.target.value)}  type="password"  placeholder="Password" />
+                <Form.Control value={password} onChange={(password) => setPassword(password.target.value)}  type="password"  placeholder="Password" name='passwordInput' />
   
               </InputGroup>
   
@@ -45,7 +45,7 @@ export default observer(function LoginComponent({switchToRegistration}) {
               <Row>
                 <Col className="text-center">
   
-                  <Button className="rounded" style={{ paddingLeft: "30px", paddingRight: "30px", backgroundColor: "#6933C8", color: "white" }} variant="register" size="lg" onClick={() => userStore.login(email, password)}>
+                  <Button className="rounded" name='loginButton' style={{ paddingLeft: "30px", paddingRight: "30px", backgroundColor: "#6933C8", color: "white" }} variant="register" size="lg" onClick={() => userStore.login(email, password)}>
                     Login
                   </Button>
                 </Col>
@@ -53,7 +53,7 @@ export default observer(function LoginComponent({switchToRegistration}) {
               <Row>
                 <Col className="text-center">
   
-                  <Button className="mt-2" variant="none" size="lg" onClick={ () => switchToRegistration()}style={{color: 'blue', textDecoration:'underline', fontSize: '100%'}  } >
+                  <Button className="mt-2" name='changeFormButton' variant="none" size="lg" onClick={ () => switchToRegistration()}style={{color: 'blue', textDecoration:'underline', fontSize: '100%'}  } >
                     Don't have an account yet? Sign Up
                   </Button>
                 </Col>

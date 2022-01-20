@@ -69,7 +69,7 @@ export function RegistrationComponents({switchToLogin}) {
                     <MdPerson size="1.6em" />
                   </InputGroup.Text>
 
-                  <Form.Control type="firstName" placeholder="Firstname" value={firstName} onChange={(firstName) => setFirstName(firstName.target.value)}/>
+                  <Form.Control type="firstName" placeholder="Firstname" name='firstNameInput' value={firstName} onChange={(firstName) => setFirstName(firstName.target.value)}/>
                 </InputGroup>
               </Form.Group>
 
@@ -78,7 +78,7 @@ export function RegistrationComponents({switchToLogin}) {
                   <InputGroup.Text style={{color: "white"}}>
                    
                   </InputGroup.Text>
-                  <Form.Control type="LastName" placeholder=" Lastname" value={lastName} onChange={(lastName) => setLastName(lastName.target.value)}/>
+                  <Form.Control type="LastName" placeholder=" Lastname"  name='lastNameInput' value={lastName} onChange={(lastName) => setLastName(lastName.target.value)}/>
                 </InputGroup>
               </Form.Group>
             </Row>
@@ -88,7 +88,7 @@ export function RegistrationComponents({switchToLogin}) {
                 <GiGamepad size="1.6em" />
 
               </InputGroup.Text>
-              <Form.Control  placeholder="Username" value={userName} maxLength={15} onChange={(userName) => setUserName(userName.target.value)}/>
+              <Form.Control  placeholder="Username"   name='userNameInput' value={userName} maxLength={15} onChange={(userName) => setUserName(userName.target.value)}/>
          
             </InputGroup>
 
@@ -98,7 +98,7 @@ export function RegistrationComponents({switchToLogin}) {
                 <MdEmail size="1.5em" />
 
               </InputGroup.Text>
-              <Form.Control  placeholder="Email" value={email} onChange={(email) => setEmail(email.target.value)}/>
+              <Form.Control  placeholder="Email"  name='emailInput' value={email} onChange={(email) => setEmail(email.target.value)}/>
 
             </InputGroup>
 
@@ -107,7 +107,7 @@ export function RegistrationComponents({switchToLogin}) {
                 <MdLock size="1.5em" />
 
               </InputGroup.Text>
-              <Form.Control type="password"  placeholder="Password" onChange={(password) => setPassword(password.target.value)}/>
+              <Form.Control type="password"  name='passwordInput'  placeholder="Password" onChange={(password) => setPassword(password.target.value)}/>
 
             </InputGroup>
 
@@ -116,14 +116,14 @@ export function RegistrationComponents({switchToLogin}) {
                 <MdLock size="1.5em" />
 
               </InputGroup.Text>
-              <Form.Control type="password" placeholder="Repeat Password" value={repeatPassword} onChange={(repeatPassword) => setRepeatPassword(repeatPassword.target.value)}/>
+              <Form.Control type="password"  name='repeatPasswordInput' placeholder="Repeat Password" value={repeatPassword} onChange={(repeatPassword) => setRepeatPassword(repeatPassword.target.value)}/>
             </InputGroup>
 
 
             <Row>
               <Col className="text-center">
 
-                <Button className="rounded" style={{ paddingLeft: "30px", paddingRight: "30px", backgroundColor: "#6933C8", color: "white" }} variant="register" size="lg" onClick={() =>handleSubmit(firstName, lastName, userName, email, password, repeatPassword) }>
+                <Button className="rounded" name='registerButton' style={{ paddingLeft: "30px", paddingRight: "30px", backgroundColor: "#6933C8", color: "white" }} variant="register" size="lg" onClick={() =>handleSubmit(firstName, lastName, userName, email, password, repeatPassword) }>
                   Register
                 </Button>
               </Col>
@@ -131,7 +131,7 @@ export function RegistrationComponents({switchToLogin}) {
             <Row>
               <Col className="text-center">
 
-                <Button className="mt-2" variant="none" size="lg" onClick={() => switchToLogin()} style={{color: 'blue', textDecoration:'underline',fontSize: '100%'}}>
+                <Button className="mt-2" variant="none" name='ChangeToSignIn' size="lg" onClick={() => switchToLogin()} style={{color: 'blue', textDecoration:'underline',fontSize: '100%'}}>
                   Already have an account? Sign in
                 </Button>
               </Col>
